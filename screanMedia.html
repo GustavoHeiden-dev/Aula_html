@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout com Grid</title>
+
+    <style>
+        * {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .main {
+            display: grid;
+
+            grid-template-areas:
+                "header header header"
+                "menu section aside"
+                "footer footer footer";
+
+            grid-template-columns: repeat(3, 1fr);
+            height: 20vh;
+          
+        }
+
+        header {
+            grid-area: header;
+        }
+
+        menu {
+            grid-area: menu;
+        }
+
+        section {
+            grid-area: section;
+        }
+
+        aside {
+            grid-area: aside;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <header>Header</header>
+        <menu>Menu</menu>
+        <section>Seção</section>
+        <aside>Aside</aside>
+        <footer>Rodapé</footer>
+    </div>
+</body>
+</html>
