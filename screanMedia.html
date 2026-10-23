@@ -44,12 +44,42 @@
         footer {
             grid-area: footer;
         }
+        .a{
+            animation: pula 4s linear 0s infinite;
+        }
+        @keyframes pula {
+            0%{
+                transform: translate(0,0);
+                color: black;
+                font-size: 20px;
+            }
+            10%{
+                transform: translate(30px,30px);
+                color: aquamarine;
+                font-size: 40px;
+            }
+            20%{
+                transform: translate(60px,0);
+                color: blueviolet;
+                font-size: 90px;
+            }
+            30%{
+                transform: translate(80px,30px);
+                color: brown;
+                font-size: 120px;
+            }
+             40%{
+                transform: translate(100px,0px);
+                color: green;
+                font-size: 150px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="main">
-        <header>Header</header>
+        <header class="a">Header</header>
         <menu>Menu</menu>
         <section>Seção</section>
         <aside>Aside</aside>
