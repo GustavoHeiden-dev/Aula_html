@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 3 - HTTP na Prática: Requisição e Resposta</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+
+   
+    <nav>
+        <a href="lista1.html">Início (Index)</a>
+      
+    </nav>
+
+    <header>
+        <h1>Atividade 3: O Protocolo HTTP na Web</h1>
+        <p>Entendendo a comunicação entre cliente e servidor através de requisições e respostas.</p>
+    </header>
+
+    <div class="container">
+       
+        <h2>1. O Papel do HTTP na Comunicação</h2>
+        <p>O <strong>HTTP</strong> (<em>Hypertext Transfer Protocol</em> ou Protocolo de Transferência de Hipertexto) é o protocolo fundamental da World Wide Web. Ele define o formato e a maneira como as mensagens são transmitidas e formatadas, permitindo que navegadores (clientes) e servidores web entendam-se perfeitamente e troquem páginas HTML, imagens, vídeos, estilos CSS e dados em geral.</p>
+
+        <hr>
+
+     
+        <h2>2. Conceitos-Chave: Cliente, Servidor, Requisição e Resposta</h2>
+        <p>A arquitetura da Web baseia-se no modelo <strong>Cliente-Servidor</strong>:</p>
+        <ul>
+            <li><strong>Cliente:</strong> É o dispositivo ou software (geralmente o seu navegador web, como Chrome, Firefox ou Safari) que inicia a comunicação solicitando um recurso.</li>
+            <li><strong>Servidor:</strong> É o computador potente ou sistema centralizado que armazena os arquivos dos sites, processa regras de negócio e devolve o que foi pedido.</li>
+            <li><strong>Requisição (Request):</strong> A mensagem enviada pelo cliente ao servidor pedindo uma ação ou arquivo específico.</li>
+            <li><strong>Resposta (Response):</strong> O pacote de dados enviado de volta pelo servidor para o cliente, contendo o resultado da requisição (como o código da página ou uma mensagem de erro).</li>
+        </ul>
+
+        <hr>
+
+  
+        <h2>3. Principais Métodos HTTP: GET e POST</h2>
+        <p>Os métodos (ou verbos) HTTP indicam a intenção da requisição feita pelo cliente:</p>
+        <ul>
+            <li><strong>GET:</strong> Utilizado para <em>solicitar</em> a recuperação de um recurso (como carregar uma página web ou imagem). Os dados enviados ficam visíveis na URL. É seguro e idempotente (fazer várias vezes produz o mesmo efeito).</li>
+            <li><strong>POST:</strong> Utilizado para <em>enviar</em> dados a serem processados por um servidor (como preencher um formulário de cadastro, enviar uma senha ou fazer upload de arquivos). Os dados trafegam ocultos no corpo da requisição.</li>
+        </ul>
+
+        <hr>
+
+        
+            <h2>4. Exemplo de uma Requisição HTTP</h2>
+            <p>Abaixo está um exemplo real de mensagem enviada por um navegador ao solicitar a página inicial de um site:</p>
+            <pre><code>GET /index.html HTTP/1.1
+    Host: www.exemplo.com.br
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+    Accept: text/html,application/xhtml+xml
+    Accept-Language: pt-BR,pt;q=0.9</code></pre>
+
+            <hr>
+
+        
+            <h2>5. Exemplo de uma Resposta HTTP</h2>
+            <p>Abaixo está o retorno gerado pelo servidor web ao atender com sucesso a requisição acima:</p>
+            <pre><code>HTTP/1.1 200 OK
+    Date: Tue, 03 Jun 2026 12:00:00 GMT
+    Content-Type: text/html; charset=UTF-8
+    Content-Length: 125
+
+
+        <hr>
+
+    
+        <h2>6. Códigos de Status HTTP</h2>
+        <p>Os códigos de status são números de três dígitos retornados pelo servidor para indicar o resultado da requisição. Abaixo estão 6 dos códigos mais importantes:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Status</th>
+                    <th>Explicação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>200</strong></td>
+                    <td>OK</td>
+                    <td>A requisição foi bem-sucedida e o servidor retornou o recurso solicitado.</td>
+                </tr>
+                <tr>
+                    <td><strong>301</strong></td>
+                    <td>Moved Permanently</td>
+                    <td>O recurso solicitado foi movido permanentemente para uma nova URL (redirecionamento).</td>
+                </tr>
+                <tr>
+                    <td><strong>400</strong></td>
+                    <td>Bad Request</td>
+                    <td>O servidor não conseguiu entender a requisição devido a uma sintaxe inválida enviada pelo cliente.</td>
+                </tr>
+                <tr>
+                    <td><strong>403</strong></td>
+                    <td>Forbidden</td>
+                    <td>O servidor entendeu o pedido, mas se recusa a autorizá-lo (falta de permissão de acesso).</td>
+                </tr>
+                <tr>
+                    <td><strong>404</strong></td>
+                    <td>Not Found</td>
+                    <td>O servidor não encontrou o recurso solicitado (página ou arquivo inexistente).</td>
+                </tr>
+                <tr>
+                    <td><strong>500</strong></td>
+                    <td>Internal Server Error</td>
+                    <td>Erro genérico no servidor. Indica que algo inesperado deu errado nos bastidores do sistema.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+</body>
+</html>
