@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Display lado a lado</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .caixas {
+            font-size: 0;
+        }
+
+        .caixa {
+            display: inline-block;
+            width: 25%;
+            height: 135px;
+            line-height: 135px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .um { background-color: #6600ff; }
+        .dois { background-color: #009900; }
+        .tres { background-color: red; }
+        .quatro { background-color: #eeff33; }
+    </style>
+</head>
+<body>
+    <div class="caixas">
+        <div class="caixa um">1</div>
+        <div class="caixa dois">2</div>
+        <div class="caixa tres">3</div>
+        <div class="caixa quatro">4</div>
+    </div>
+
+    <p>O display inline-block permite colocar as caixas lado a lado, mantendo largura e altura. O font-size zero no elemento pai remove os espaços entre elas.</p>
+</body>
+</html>

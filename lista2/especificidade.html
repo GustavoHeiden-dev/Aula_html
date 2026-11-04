@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade</title>
+    <style>
+        li { color: red; }
+        .churras { color: green; }
+        .fruta { color: gray; }
+        li + li.churras { color: black; }
+        .churras[draggable="true"] { color: magenta; }
+        #lip1, #lip2, #lip3 { color: blue; }
+        #lip3.fruta { color: orange; }
+        ol > li.churras#lip5 { color: purple; }
+    </style>
+</head>
+<body>
+    <ol>
+        <li id="lip0">Abacaxi</li>
+        <li class="fruta">Melão</li>
+        <li id="lip2" class="fruta">Pera</li>
+        <li id="lip3" class="fruta">Uva</li>
+        <li id="lip4" class="fruta">Maçã</li>
+        <li class="churras">Carne</li>
+        <li class="churras">Linguiça</li>
+        <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+    </ol>
+
+    <p>Abacaxi: vermelho pela regra 1, pois somente o seletor li corresponde ao item.</p>
+    <p>Melão: cinza pela regra 3, pois uma classe é mais específica que li.</p>
+    <p>Pera: azul pela regra 6, pois um ID é mais específico que uma classe.</p>
+    <p>Uva: laranja pela regra 7, pois ID com classe é mais específico que apenas ID.</p>
+    <p>Maçã: cinza pela regra 3, pois seu ID não aparece em nenhuma regra.</p>
+    <p>Carne: preto pela regra 4, pois o item possui a classe churras e vem imediatamente depois de outro li. Esse seletor é mais específico que .churras.</p>
+    <p>Linguiça: preto pela regra 4, pelo mesmo motivo aplicado à carne.</p>
+    <p>Pão de alho: magenta pela regra 5, pois classe com atributo tem mais especificidade que uma classe com dois seletores de elemento.</p>
+    <p>A regra 8 não é aplicada porque não existe um item com ID lip5 e classe churras.</p>
+</body>
+</html>

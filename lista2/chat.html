@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <style>
+        .chat {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 300px;
+            border: 1px solid gray;
+            padding: 10px;
+        }
+
+        .mensagem {
+            border: 1px solid gray;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .minha {
+            background-color: lightgreen;
+            text-align: right;
+        }
+
+        .avatar {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .minha .avatar {
+            float: right;
+            margin-left: 10px;
+            margin-right: 0;
+        }
+
+        small {
+            display: block;
+            text-align: right;
+        }
+
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat">
+        <div class="mensagem">
+            <span class="avatar">👨</span>
+            Pedro: Olá, tudo bem?
+            <small>00:50</small>
+        </div>
+
+        <div class="mensagem minha">
+            <span class="avatar">👩</span>
+            Eu: Estou bem, e você?
+            <small>00:55</small>
+        </div>
+
+        <div class="mensagem">
+            <span class="avatar">👨</span>
+            Pedro: Vamos sair hoje?
+            <small>01:01</small>
+        </div>
+
+        <div class="mensagem minha">
+            <span class="avatar">👩</span>
+            Eu: Vamos!
+            <small>01:02</small>
+        </div>
+
+        <form>
+            <textarea placeholder="Digite sua mensagem"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html> 
