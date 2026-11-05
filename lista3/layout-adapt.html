@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Adaptativo</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-rows: 70px 50px 1fr 50px 50px;
+            grid-template-areas:
+                "header header header"
+                "esquerda banner direita"
+                "esquerda main direita"
+                "esquerda baixo direita"
+                "footer footer footer";
+            gap: 5px;
+            padding: 10px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .layout > * {
+            display: grid;
+            place-items: center;
+            padding: 10px;
+        }
+
+        header {
+            grid-area: header;
+            background-color: #e8b400;
+        }
+
+        .banner {
+            grid-area: banner;
+            background-color: #d83e32;
+        }
+
+        .esquerda {
+            grid-area: esquerda;
+            background-color: #39fa9a;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #3a82ff;
+        }
+
+        .direita {
+            grid-area: direita;
+            background-color: #ffc800;
+        }
+
+        .baixo {
+            grid-area: baixo;
+            background-color: #109b55;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #3f80ee;
+        }
+
+        @media screen and (max-width: 600px) {
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: 60px 50px 50px 1fr 50px 50px 50px;
+                grid-template-areas:
+                    "header"
+                    "banner"
+                    "esquerda"
+                    "main"
+                    "direita"
+                    "baixo"
+                    "footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <header>Header</header>
+        <div class="banner">Banner</div>
+        <aside class="esquerda">Left Aside</aside>
+        <main>Main Content</main>
+        <aside class="direita">Right Aside</aside>
+        <div class="baixo">Low Content</div>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

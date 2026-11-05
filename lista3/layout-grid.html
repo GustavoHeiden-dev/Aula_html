@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Grid</title>
+    <style>
+        .layout {
+            display: grid;
+            grid-template-columns: 2fr 3fr 2fr;
+            grid-template-rows: repeat(4, 120px);
+            grid-template-areas:
+                "um um um"
+                "dois tres quatro"
+                "cinco tres seis"
+                "cinco sete sete";
+            gap: 10px;
+            max-width: 700px;
+            margin: 50px auto;
+        }
+
+        .layout > div {
+            display: grid;
+            place-items: center;
+            background-color: #ffb700;
+            border-radius: 50px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .um {
+            grid-area: um;
+        }
+
+        .layout > .dois {
+            grid-area: dois;
+            background-color: #ff0040;
+        }
+
+        .tres {
+            grid-area: tres;
+        }
+
+        .layout > .quatro {
+            grid-area: quatro;
+            background-color: #ff0040;
+        }
+
+        .cinco {
+            grid-area: cinco;
+        }
+
+        .layout > .seis {
+            grid-area: seis;
+            background-color: #fa003e;
+        }
+
+        .sete {
+            grid-area: sete;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="um">1</div>
+        <div class="dois">2</div>
+        <div class="tres">3</div>
+        <div class="quatro">4</div>
+        <div class="cinco">5</div>
+        <div class="seis">6</div>
+        <div class="sete">7</div>
+    </div>
+</body>
+</html>

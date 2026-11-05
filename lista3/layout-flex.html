@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Flex</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            color: white;
+        }
+
+        .pagina {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topo {
+            height: 100px;
+            background-color: #4c3b3b;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding-left: 30px;
+        }
+
+        .circulo {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: #59ffff;
+        }
+
+        .layout {
+            display: flex;
+            flex: 1;
+        }
+
+        nav {
+            width: 23%;
+            background-color: #ff7300;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .direita {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        header {
+            height: 80px;
+            background-color: #0086a4;
+        }
+
+        main {
+            flex: 1;
+            background-color: #6950c4;
+        }
+
+        footer {
+            height: 80px;
+            background-color: #04617a;
+        }
+
+        header, main, footer {
+            text-align: center;
+            padding-top: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="pagina">
+        <div class="topo">
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+            <div class="circulo"></div>
+        </div>
+
+        <div class="layout">
+            <nav>NAVEGAÇÃO</nav>
+
+            <div class="direita">
+                <header>CABEÇALHO</header>
+                <main>CONTEÚDO</main>
+                <footer>RODAPÉ</footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

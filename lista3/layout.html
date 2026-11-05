@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Responsivo</title>
+    <style>
+        .layout {
+            display: grid;
+            grid-template-columns: 25px 2fr 1fr 1fr 2fr;
+            grid-template-rows: 60px 80px 50px;
+            grid-template-areas:
+                "bolinhas azul azul azul amarelo"
+                "bolinhas rosa rosa claro amarelo"
+                "salmao salmao salmao verde verde";
+            gap: 5px;
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .bolinhas {
+            grid-area: bolinhas;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .bolinha {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .bolinha:nth-child(1) {
+            background-color: #ff7733;
+        }
+
+        .bolinha:nth-child(2) {
+            background-color: #daff62;
+        }
+
+        .bolinha:nth-child(3) {
+            background-color: #ac63ff;
+        }
+
+        .bolinha:nth-child(4) {
+            background-color: #ff9e28;
+        }
+
+        .azul {
+            grid-area: azul;
+            background-color: #63a9ff;
+        }
+
+        .amarelo {
+            grid-area: amarelo;
+            background-color: #ffc851;
+        }
+
+        .rosa {
+            grid-area: rosa;
+            background-color: #ff6f6f;
+        }
+
+        .claro {
+            grid-area: claro;
+            background-color: #42ffef;
+        }
+
+        .salmao {
+            grid-area: salmao;
+            background-color: #ff5222;
+        }
+
+        .verde {
+            grid-area: verde;
+            background-color: #d6ff1e;
+        }
+
+        @media screen and (max-width: 499px) {
+            .layout {
+                grid-template-columns: 1fr;
+                grid-template-rows: 35px repeat(6, 80px);
+                grid-template-areas:
+                    "bolinhas"
+                    "azul"
+                    "amarelo"
+                    "rosa"
+                    "claro"
+                    "salmao"
+                    "verde";
+            }
+
+            .bolinhas {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <div class="bolinhas">
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+        </div>
+
+        <div class="azul"></div>
+        <div class="amarelo"></div>
+        <div class="rosa"></div>
+        <div class="claro"></div>
+        <div class="salmao"></div>
+        <div class="verde"></div>
+    </div>
+</body>
+</html>
